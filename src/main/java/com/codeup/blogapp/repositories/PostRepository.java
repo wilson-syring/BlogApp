@@ -8,7 +8,7 @@ public interface PostRepository extends JpaRepository<Post, Long> {
 
     Post findByBody(String body);
 
-
+    Post findByTitleLike(String title);
 
 }
 

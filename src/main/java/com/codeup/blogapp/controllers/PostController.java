@@ -28,15 +28,15 @@ public class PostController {
         model.addAttribute("post", currentPost);
         return "posts/post";
     }
-    @RequestMapping(path = "/posts/create", method = RequestMethod.GET)
-    @ResponseBody
-    public String createPost() {
-        return "This be tha place for creating posts";
+    @GetMapping(path = "/posts/create")
+    public String showCreateForm(Model model) {
+        model.addAttribute("post", new Post());
+        return "posts/create";
     }
-    @PostMapping(path="/posts/create")
-    @ResponseBody
-    public String viewCreateRequest(){
-        return "This be the post request for /create post";
+    @PostMapping(path = "/posts/create")
+    public String create(@ModelAttribute Post post) {
+        postDao.save(post);
+        return "redirect:/posts";
     }
 
 }

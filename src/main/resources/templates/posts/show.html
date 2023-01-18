@@ -5,8 +5,9 @@
     <title>Posts</title>
 </head>
 <body>
+<h1>Posts</h1>
 <div th:each="post: ${posts}">
-    <h1>Posts</h1>
+
     <h2 th:text="${post.title}"></h2>
     <p th:text="${post.body}"></p>
 </div>
