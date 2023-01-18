@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Welcome to Dicey</h1>
+    <h2>Pick a number between 1 and 6</h2>
+    <form action="/roll-dice" method="get">
+        <input type="text" name="guess" id="guess" class="field" />
+        <button>Guess</button>
+    </form>
+<!--    <h2>here is the guess: <span th:text="${guess}"></span></h2>-->
+<!--    <h2>here is the result: <span th:text="${result}"></span></h2>-->
+<!--    <h2>you guess was: <span th:text="${isCorrect}"></span></h2>-->
+</body>
+</html>
