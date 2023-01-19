@@ -15,6 +15,9 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
+    @OneToOne
+    private User user;
+
     public Post(long id, String title, String body) {
         this.id = id;
         this.title = title;
