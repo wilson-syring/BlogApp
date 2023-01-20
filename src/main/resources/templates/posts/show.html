@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
+<head th:insert="partials/head :: header">
     <meta charset="UTF-8">
-    <title>Posts</title>
+    <title>view post</title>
 </head>
 <body>
+<nav th:insert="partials/navbar :: navbar"></nav>
 <h1>Posts</h1>
 <div th:each="post: ${posts}">
 
@@ -13,6 +14,7 @@
     <p th:text="${post.user.username}"></p>
 
 </div>
+
 </body>
 </html>
 

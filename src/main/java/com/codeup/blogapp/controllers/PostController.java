@@ -32,7 +32,7 @@ public class PostController {
     public String getIndividualPost(@PathVariable long id, Model model) {
         Post currentPost = postDao.getReferenceById(1L);
         model.addAttribute("post", currentPost);
-        return "posts/post";
+        return "posts/show";
     }
 
     @GetMapping(path = "/posts/create")
