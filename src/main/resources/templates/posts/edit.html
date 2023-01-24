@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:insert="partials/head :: header">
+  <meta charset="UTF-8">
+  <title>Edit post</title>
+</head>
+
+<body>
+
+<nav th:insert="partials/navbar :: navbar"></nav>
+
+<h1>Edit Post</h1>
+<form th:action="@{/posts/{id}/edit}" th:method="POST" th:object="${post}">
+  Title:
+  <input th:field="*{title}" />
+  <br />
+  Body:
+  <textarea th:field="*{body}"></textarea>
+
+  <input class="btn btn-block btn-primary" type="submit" value="Update post"/>
+</form>
+
+</body>
+</html>
