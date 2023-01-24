@@ -40,11 +40,12 @@ public class PostController {
     @GetMapping("/posts/{id}/edit")
     public String showEditForm(@PathVariable long id, Model model) {
         Post currentPost = postDao.getReferenceById(id);
+        System.out.println("currentPost = " + currentPost);
         model.addAttribute("post", currentPost);
         return "posts/edit";
     }
-    @PostMapping("/posts/{id}/edit")
-    public String editPost(@PathVariable long id, @ModelAttribute Post post) {
+    @PostMapping("/posts/edit")
+    public String editPost(@ModelAttribute Post post) {
         User user = userDao.findAll().get(0);
         post.setUser(user);
         postDao.save(post);
