@@ -28,7 +28,12 @@ public class User {
         this.email = email;
         this.password = password;
     }
-
+    public User(User copy) {
+        id = copy.id;
+        email = copy.email;
+        username = copy.username;
+        password = copy.password;
+    }
     public User() {
 
     }

@@ -10,13 +10,11 @@
 <nav th:insert="partials/navbar :: navbar"></nav>
 
 <h1>Edit Post</h1>
-<form th:action="@{/posts/{id}/edit}" th:method="POST" th:object="${post}">
-  Title:
-  <input th:field="*{title}" />
-  <br />
-  Body:
-  <textarea th:field="*{body}"></textarea>
-
+<form th:action="@{/posts/{id}/edit(id=${post.id})}" th:method="POST" th:object="${post}">
+  <label for="title">Title</label>
+  <input class="form-control" id="title" name="title" placeholder="Title" th:field="*{title}" type="text">
+  <label for="body">Body</label>
+  <textarea class="form-control" id="body" name="body" rows="3" th:field="*{body}"></textarea>
   <input class="btn btn-block btn-primary" type="submit" value="Update post"/>
 </form>
 

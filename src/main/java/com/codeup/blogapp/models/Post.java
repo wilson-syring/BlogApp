@@ -15,7 +15,7 @@ public class Post {
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;
 
-    @OneToOne
+    @ManyToOne
     private User user;
 
     public Post(long id, String title, String body) {
