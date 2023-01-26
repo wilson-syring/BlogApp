@@ -59,7 +59,7 @@ public class PostController {
     }
 
     @PostMapping(path = "/posts/create")
-    public String create(@ModelAttribute Post post) {
+    public String createPost(@ModelAttribute Post post) {
         User user = userDao.getReferenceById(1L);
         post.setUser(user);
         emailService.prepareAndSend(post, "New Post Created", "A new post has been created");
