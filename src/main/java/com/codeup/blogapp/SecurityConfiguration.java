@@ -52,7 +52,7 @@ public class SecurityConfiguration {
                 .and()
                 .authorizeRequests()
                 .requestMatchers(
-                        "/ads/create" // only authenticated users can create ads
+                        "/posts/create" // only authenticated users can create ads
                 )
                 .authenticated()
         ;
